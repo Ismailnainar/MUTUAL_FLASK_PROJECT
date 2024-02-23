@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-8 mx-auto">
+    <h2>Edit user</h2>
+
+<form action="" method="post">
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="Name"  class="form-control" value="{{data.Name}}">
+    </div><br>
+    <div class="form-group">
+    <label for="Invested_Amount">Invested_Amount</label>
+    <input type="number" name="Invested_Amount"   value="{{data.Invested_Amount}}"    class="form-control">
+    </div><br>
+    <div class="form-group">
+    <label for="fund_code">fund_code</label>
+    <input type="number" name="fund_code"  value="{{data.fund_code}}"    class="form-control">
+    </div><br>
+    <div class="form-group">
+    <label for="Units_held">Units_held</label>
+    <input type="number" name="Units_held"   value="{{data.Units_held}}"  class="form-control">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary form-control">
+    </form>
+    </div>
+{% endblock %}

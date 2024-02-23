@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Finance Management</h1>
+<hr>
+<div style="justify-content: right; text-align:right">
+    <a href="{{url_for('add')}}" class="btn btn-success">ADD USER</a>
+    <a href="{{url_for('signup')}}" class="btn btn-success">SIGNUP</a>
+    <a href="{{url_for('logout')}}" class="btn btn-success">LOGOUT</a>
+</div>
+<table class="table table-border">
+    <tr>
+       <th>id</th>
+       <th>Name</th>
+       <th>Invested_Amount</th>
+       <th>Units_held</th>
+       <th>fund_name</th>
+       <th>nav</th>
+       <th>current_value</th>
+       <th>Growth</th>
+       <th>Edit</th>
+       <th>Delete</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.Name }}</td>
+        <td>{{ i.Invested_Amount }}</td>
+        <td>{{ i.Units_held }}</td>
+        <td>{{i.fund_name}}</td>
+        <td>{{i.nav}}</td>
+        <td>{{ i.current_value }}</td>
+        <td>{{ i.Growth }}</td>
+        <td><a href="{{url_for('EDIT',id=i.id)}}">Edit</a></td>
+        <td><a href="{{url_for('Delete',id=i.id)}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
